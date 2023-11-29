@@ -1,11 +1,11 @@
 import tkinter as tk
 from tkinter import simpledialog, messagebox
-#from graphviz import Digraph
+from graphviz import Digraph
 from animais import rede_semantica
 from perguntas import mapeamento_palavras_chave
 
-#g = Digraph('Ontologia', filename='ontologia', format='pdf')
-#g.attr(rankdir='LR', size='15')
+g = Digraph('Ontologia', filename='ontologia', format='pdf')
+g.attr(rankdir='LR', size='15')
 
 ##########################################################################################################################################################################
 

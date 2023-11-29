@@ -7,74 +7,73 @@ rede_semantica = {
         "predadores": ["lobo"],
         "aparência": "varia de acordo com a raça",
         "longevidade": "10 a 15 anos",
-        "vive_em": "diversos, incluindo doméstico"
+        "vive_em": ["ambiente doméstico", "ambiente selvagem"]
     },
 
     "gato": {
         "é_um": "mamífero",
         "come": ["ração", "pequenos roedores, aves"],
-        "estrutura_física": ["patas", "bigodes", "cauda"],
+        "estrutura_física": ["patas", "bigodes", "cauda", "garras"],
         "comportamento": ["miar", "independente", "higiênico"],
         "predadores": ["cães maiores", "coiotes"],
         "aparência": "varia de acordo com a raça",
         "longevidade": "12 a 15 anos",
-        "vive_em": "doméstico, selvagem"
+        "vive_em": ["ambiente doméstico", "ambiente selvagem"]
     },
 
-    "pássaro": {
+    "sabiá": {
         "é_um": "ave",
-        "come": "sementes, insetos, frutas",
+        "come": ["sementes", "insetos", "aracnídeos", "frutas"],
         "estrutura_física": ["asas", "bico", "penas"],
         "comportamento": ["canto", "voo", "migração"],
-        "predadores": ["gatos", "rapinas"],
-        "aparência": "varia muito entre espécies",
-        "longevidade": "varia muito entre espécies",
-        "vive_em": "diversos habitats, incluindo urbano"
+        "predadores": ["gato"],
+        "aparência": ["ave pequena com penagem alaranjada"],
+        "longevidade": "até 30 anos",
+        "vive_em": ["florestas", "ambiente urbano"]
     },
     
-
-    "peixe": {
-        "é_um": "animal aquático",
-        "come": "algas, pequenos animais aquáticos, plâncton",
+    "pacu": {
+        "é_um": "peixe",
+        "come": ["algas", "frutas", "peixes pequenos", "plâncton"],
         "estrutura_física": ["barbatanas", "escamas", "branquias"],
-        "comportamento": ["nado", "cardumes", "alimentação filtrante"],
-        "predadores": "variam conforme a espécie",
-        "aparência": "varia muito entre espécies",
-        "longevidade": "varia muito entre espécies",
-        "vive_em": "água doce, salgada"
+        "comportamento": ["nado", "cardumes"],
+        "predadores": ["pinhara", "jacaré"],
+        "aparência": "peixe de médio/grande porte",
+        "longevidade": "10 anos",
+        "vive_em": "rio"
     },
 
     "elefante": {
         "é_um": "mamífero",
-        "come": "vegetação, frutas, raízes",
+        "come": ["vegetação", "frutas", "raízes", "folhas"],
         "estrutura_física": ["tromba", "presas", "orelhas grandes"],
-        "comportamento": ["social", "matriarcal", "memória forte"],
-        "predadores": "humanos (caça furtiva)",
-        "aparência": "grande, pele grossa",
+        "comportamento": ["social", "matriarcal", "memória forte", "protetor"],
+        "predadores": "humanos (caça)",
+        "aparência": ["grande", "pele grossa", "orelhas grandes", ],
         "longevidade": "60 a 70 anos",
-        "vive_em": "savanas, florestas"
+        "vive_em": ["savana", "floresta"]
     },
 
     "borboleta": {
         "é_um": "inseto",
         "come": "néctar, seiva",
         "estrutura_física": ["asas", "antenas", "probóscide"],
-        "comportamento": ["voo", "migração", "polinização"],
-        "predadores": ["pássaros", "aranhas"],
+        "comportamento": ["voo", "migração", "polinização", "metamorfose"],
+        "predadores": ["aves", "aranhas"],
         "aparência": "asas coloridas e padronizadas",
         "longevidade": "alguns dias a vários meses",
-        "vive_em": "diversos, incluindo jardins e campos"
+        "vive_em": ["ambiente selvagem", "jardim", "campo"]
     },
 
     "tartaruga": {
         "é_um": "réptil",
-        "come": "vegetação, pequenos animais, algas",
+        "come": ["vegetação", "frutas", "algas", "legumes", "insetos"],
         "estrutura_física": ["casco", "patas", "cabeça retrátil"],
         "comportamento": ["lento", "solitário", "longevidade"],
-        "predadores": ["aves", "peixes grandes", "humanos"],
-        "aparência": "casco robusto, varia conforme a espécie",
+        "predadores": ["aves", "peixes grandes", "humanos (caça)"],
+        "aparência": "réptil baixo com casco robusto, varia conforme a espécie",
         "longevidade": "30 a 100 anos",
-        "vive_em": "terra, água doce e salgada"
+        "vive_em": ["rio", "oceano"]
     },
 
     "urso": {
@@ -107,7 +106,7 @@ rede_semantica = {
         "predadores": ["tubarão"],
         "aparência": "corpo liso, cinza",
         "longevidade": "20 a 50 anos",
-        "vive_em": "oceanos"
+        "vive_em": "oceano"
     },
 
     "abelha": {
@@ -115,29 +114,18 @@ rede_semantica = {
         "come": "néctar, pólen",
         "estrutura_física": ["asas", "ferrão", "antenas"],
         "comportamento": ["polinização", "produção de mel", "social"],
-        "predadores": ["pássaros", "aranhas"],
+        "predadores": ["aves", "aranhas"],
         "aparência": "pequeno, listras amarelas e pretas",
         "longevidade": "algumas semanas a meses",
         "vive_em": "colmeias, ambientes diversos"
     },
 
-    "elefante": {
-        "é_um": "mamífero",
-        "come": "herbívoro (folhas, galhos, frutas)",
-        "estrutura_física": ["tromba", "presas", "grandes orelhas"],
-        "comportamento": ["social", "memória forte", "protetor"],
-        "predadores": "humanos (caça ilegal)",
-        "aparência": "grande, pele cinza e enrugada",
-        "longevidade": "60 a 70 anos",
-        "vive_em": "savanas, florestas"
-    },
-
     "águia": {
-        "é_um": "pássaro",
+        "é_um": "ave",
         "come": ["peixe", "pequenos mamíferos"],
         "estrutura_física": ["garras afiadas", "bico curvo", "grande envergadura de asas"],
         "comportamento": ["predador", "excelente visão", "voo alto"],
-        "predadores": "poucos (principalmente humanos)",
+        "predadores": "humanos (caça)",
         "aparência": ["majestosa", "penas marcantes", "ave de rapina grande com bico curvado"],
         "longevidade": "20 a 30 anos",
         "vive_em": "montanhas, planícies abertas"
@@ -162,7 +150,7 @@ rede_semantica = {
         "predadores": "humanos (caça)",
         "aparência": "grande, cinza, corpo alongado",
         "longevidade": "20 a 30 anos",
-        "vive_em": "oceanos"
+        "vive_em": "oceano"
     },
 
 
@@ -194,7 +182,7 @@ rede_semantica = {
         "estrutura_física": ["pele branca", "grande porte", "camada de gordura"],
         "comportamento": ["solitário", "nadador forte", "resistente ao frio"],
         "predadores": "humanos (caça)",
-        "aparência": "grande, pelagem branca",
+        "aparência": ["grande", "gordo", "pelagem branca", "garras"],
         "longevidade": "15 a 25 anos",
         "vive_em": "regiões árticas, gelo marinho"
     },
@@ -224,12 +212,45 @@ rede_semantica = {
     "vaca": {
         "é_um": "mamífero",
         "come": "capim",
-        "estrutura_física": ["patas"],
+        "estrutura_física": ["patas", "úbere", "chifres"],
         "comportamento": ["produz leite"],
         "predadores": ["humanos"],
         "aparência": "grande, pelagem varia",
         "longevidade": "15 a 20 anos",
         "vive_em": "campos, fazendas"
+    },
+
+    "avestruz": {
+        "é_um": "ave",
+        "come": "plantas",
+        "estrutura_física": ["pernas longas", "pescoço longo", "sem voo"],
+        "comportamento": ["corredor rápido", "social"],
+        "predadores": ["hienas", "leões"],
+        "aparência": "ave grande com plumagem densa",
+        "longevidade": "40 a 45 anos",
+        "vive_em": "savanas, áreas abertas"
+    },
+
+    "baleia": {
+        "é_um": "mamífero aquático",
+        "come": ["plâncton", "peixe"],
+        "estrutura_física": ["grande porte", "corpo aerodinâmico", "barbatanas"],
+        "comportamento": ["cantar", "migração"],
+        "predadores": ["principalmente humanos (caça)"],
+        "aparência": "grande mamífero marinho",
+        "longevidade": "20 a 100 anos, dependendo da espécie",
+        "vive_em": "oceano"
+    },
+
+    "pinguim": {
+        "é_um": "ave",
+        "come": ["peixe", "lulas", "krill"],
+        "estrutura_física": ["pernas curtas", "corpo alongado", "asas nadadeiras"],
+        "comportamento": ["nado", "não voa", "migração", "desliza no gelo"],
+        "predadores": ["foca", "baleia", "leão-marinho", "tubarão"],
+        "aparência": "ave branca e preta com pernas curtas e um bico pontudo e amarelo",
+        "longevidade": "6 a 20 anos, dependendo da espécie",
+        "vive_em": "polo sul e regiões próximas quando migra"
     },
 
     "mamífero": {
@@ -252,17 +273,6 @@ rede_semantica = {
         "longevidade": "varia de acordo com a espécie"
     },
 
-    "avestruz": {
-        "é_um": "pássaro",
-        "come": "plantas",
-        "estrutura_física": ["pernas longas", "pescoço longo", "sem voo"],
-        "comportamento": ["corredor rápido", "social"],
-        "predadores": ["hienas", "leões"],
-        "aparência": "ave grande com plumagem densa",
-        "longevidade": "40 a 45 anos",
-        "vive_em": "savanas, áreas abertas"
-    },
-
     "animal": {
         "é_um": "ser vivo",
         "características": ["mobilidade", "respiração"],
@@ -271,27 +281,5 @@ rede_semantica = {
         "predadores": "depende da espécie",
         "aparência": "diversificada",
         "longevidade": "varia de acordo com a espécie"
-    },
-
-    "baleia": {
-        "é_um": "mamífero aquático",
-        "come": ["plâncton", "peixe"],
-        "estrutura_física": ["grande porte", "corpo aerodinâmico", "barbatanas"],
-        "comportamento": ["cantar", "migração"],
-        "predadores": ["principalmente humanos (caça)"],
-        "aparência": "grande mamífero marinho",
-        "longevidade": "20 a 100 anos, dependendo da espécie",
-        "vive_em": "oceanos"
-    },
-
-    "pinguim": {
-        "é_um": "ave",
-        "come": ["peixe", "lulas", "krill"],
-        "estrutura_física": ["pernas curtas", "corpo alongado", "asas nadadeiras"],
-        "comportamento": ["nada", "não voa", "migração", "desliza no gelo"],
-        "predadores": ["foca", "baleia", "leão-marinho", "tubarão"],
-        "aparência": "ave branca e preta com pernas curtas e um bico pontudo e amarelo",
-        "longevidade": "6 a 20 anos, dependendo da espécie",
-        "vive_em": "polo sul e regiões próximas quando migra"
-    },
+    }
 }

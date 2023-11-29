@@ -20,6 +20,7 @@ mapeamento_palavras_chave = {
     "come": "come",
     "comem": "come",
     "se alimenta": "come",
+    "alimenta": "come",
     "ingere": "come",
     "consome": "come",
     "mastiga": "come",
@@ -50,8 +51,8 @@ mapeamento_palavras_chave = {
     "hábitos": "comportamento",
 
     #Predadores
-    "predadores": "predadores",
     "predadores de": "predadores",
+    "predadores": "predadores",
     "inimigos": "predadores",
     "predado": "predadores",
     "caçadores de": "predadores",
@@ -102,7 +103,7 @@ mapeamento_palavras_chave = {
 
     ############################################# classes #############################################################
 
-    "necessita de": "necessita_de",
+    "necessita de": "necessita_de", 
     "precisa": "necessita_de",
     "requer": "necessita_de",
     "depende de": "necessita_de",
@@ -111,6 +112,7 @@ mapeamento_palavras_chave = {
     "tem necessidade de": "necessita_de",
     "carece de": "necessita_de",
 
+    "respira": "respira_com",
     "respira com": "respira_com",
     "respiração": "respira_com",
     "utiliza para respirar": "respira_com",
@@ -120,5 +122,4 @@ mapeamento_palavras_chave = {
     "forma de respiração": "respira_com",
     "processo respiratório": "respira_com",
     "sistema respiratório": "respira_com",
-    
 }
