@@ -201,7 +201,7 @@ rede_semantica = {
         "respiração":["branquial"],
         "reprodução":["ovovivípara ou ovípara"],
         "características_gerais":["sentidos afiados", "ampolas de Lorenzini", "predador ápice"],
-        "é_um": "peixe cartilaginoso",
+        "é_um": "peixe",
         "come": ["peixe", "mamífero aquático"],
         "estrutura_física": ["dentes afiados", "barbatanas", "corpo hidrodinâmico"],
         "comportamento": ["predador", "solitário", "migração"],
