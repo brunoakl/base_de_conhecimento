@@ -1,6 +1,0 @@
-digraph Ontologia {
-	rankdir=LR size=15
-	baleia [color=blue]
-	"Mamífero aquático" [color=green]
-	baleia -> "Mamífero aquático" [label="é_um"]
-}

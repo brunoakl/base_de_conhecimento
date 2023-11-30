@@ -112,6 +112,27 @@ mapeamento_palavras_chave = {
     "tem necessidade de": "necessita_de",
     "carece de": "necessita_de",
 
+    
+
+    # Características Gerais
+    "características": "características_gerais",
+    "principais características": "características_gerais",
+    "atributos principais": "características_gerais",
+    "características gerais": "características_gerais",
+    "atributos" : "características_gerais",
+
+
+    # Exemplos
+    "exemplos de": "exemplos",
+    "alguns exemplos": "exemplos",
+    "tipos de": "exemplos",
+    "exemplos": "exemplos",
+
+    # Respiração
+    "respira por": "respiração",
+    "tipo de respiração": "respiração",
+    "como respira": "respiração",
+    "respiração": "respiração",
     "respira": "respira_com",
     "respira com": "respira_com",
     "respiração": "respira_com",
@@ -122,4 +143,12 @@ mapeamento_palavras_chave = {
     "forma de respiração": "respira_com",
     "processo respiratório": "respira_com",
     "sistema respiratório": "respira_com",
+    
+    # Reprodução
+    "tipo de reprodução": "reprodução",
+    "como se reproduz": "reprodução",
+    "método de reprodução": "reprodução",
+    "reprodução": "reprodução", 
+    "reprodutivo" : "reprodução",
+    "reproduz" : "reprodução"
 }

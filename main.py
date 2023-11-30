@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import simpledialog, messagebox
+from tkinter import simpledialog, messagebox, scrolledtext
 from graphviz import Digraph
 from animais import rede_semantica
 from perguntas import mapeamento_palavras_chave
@@ -20,7 +20,7 @@ def inferencia(animal, propriedade):
 
     return None
 
-def responder_pergunta(pergunta):
+def simular_responder_pergunta(pergunta):
     pergunta = pergunta.lower()
     animal_escolhido = None
     propriedade_escolhida = None
@@ -29,14 +29,12 @@ def responder_pergunta(pergunta):
     for animal in rede_semantica.keys():
         if animal.lower() in pergunta:
             animal_escolhido = animal
-            print("Animal: "+ animal_escolhido)
             break
 
     # Encontra uma propriedade específica na pergunta
     for palavra_chave, propriedade in mapeamento_palavras_chave.items():
         if palavra_chave in pergunta:
             propriedade_escolhida = propriedade
-            print("Propriedade: "+ propriedade_escolhida)
             break
 
     # Animal não encontrado ou não fornecida
@@ -44,13 +42,13 @@ def responder_pergunta(pergunta):
         return "Não possuo informações sobre o animal especificado"
     
     # Propriedade não encontrada ou não fornecida
-    if propriedade is None:
-        return f"Não tenho informações específicas sobre o {animal}."
+    if propriedade_escolhida is None:
+        return f"Não tenho informações específicas sobre o {animal_escolhido}."
 
     # Responde a perguntas sobre um animal específico
-    return responder_pergunta_especifica(animal_escolhido, propriedade_escolhida)
+    return simular_responder_pergunta_especifica(animal_escolhido, propriedade_escolhida)
 
-def responder_pergunta_especifica(animal, propriedade): # Responde a perguntas específicas sobre um animal
+def simular_responder_pergunta_especifica(animal, propriedade):
     criar_ontologia_pergunta(animal, propriedade)
     resposta_especifica = inferencia(animal, propriedade)
 
@@ -58,13 +56,36 @@ def responder_pergunta_especifica(animal, propriedade): # Responde a perguntas e
         return f"O {animal} {propriedade} {resposta_especifica}."
     else:
         return f"Não tenho informações sobre {propriedade} do {animal}."
-    
+
+def responder_pergunta_sobre_animal(pergunta):
+    # Normalizando a pergunta e dividindo em palavras
+    pergunta_normalizada = pergunta.lower()
+    palavras = pergunta_normalizada.split()
+
+    # Encontrando o animal na pergunta
+    animal = next((palavra for palavra in palavras if palavra in rede_semantica), None)
+
+    # Se um animal foi encontrado, procurar por informações relevantes na pergunta
+    if animal:
+        info_animal = rede_semantica[animal]
+        # Verificando a 'estrutura_física' do animal para uma correspondência com a pergunta
+        if "estrutura_física" in info_animal:
+            estrutura_fisica = info_animal["estrutura_física"]
+            for caracteristica in estrutura_fisica:
+                if caracteristica in pergunta_normalizada:
+                    return f"Sim, o {animal} tem {caracteristica}."
+            return f"Não, o {animal} não tem a característica especificada na pergunta."
+        else:
+            return "A informação sobre a estrutura física do animal não está disponível na base de dados."
+
+    return "Não foi possível encontrar o animal mencionado na pergunta na base de dados."
+
 def gui_perguntar_textbox():
     # Obtendo o conteúdo da textbox
     global resposta_label
     pergunta = pergunta_entry.get()
     if pergunta:
-        resposta = responder_pergunta(pergunta)
+        resposta = simular_responder_pergunta(pergunta)
         resposta_label.config(text=resposta)
 
 ##########################################################################################################################################################################
@@ -122,7 +143,16 @@ def gui_comparar_animais():
     animal2 = simpledialog.askstring("Comparar", "Digite o nome do segundo animal:").lower()
     if animal1 and animal2:
         resultado = comparar_animais(animal1, animal2)
-        messagebox.showinfo("Comparação", resultado)
+        # Criar nova janela
+        terms_window = tk.Toplevel()
+        terms_window.title("Comparação")
+
+        # Criar um widget Text com barras de rolagem
+        text_area = scrolledtext.ScrolledText(terms_window, wrap=tk.WORD)
+        text_area.pack(fill=tk.BOTH, expand=True)
+
+        # Inserir os termos formatados no widget Text
+        text_area.insert(tk.INSERT, resultado)
 
 ##########################################################################################################################################################################
 
@@ -188,7 +218,16 @@ def listar_propriedades():
     for tipo, termos in tipo_para_termos.items():
         formatted_terms += f"{tipo}:\n" + ', '.join(termos) + "\n\n"
 
-    messagebox.showinfo("Termos aceitos:", formatted_terms)
+    # Criar nova janela
+    terms_window = tk.Toplevel()
+    terms_window.title("Termos Aceitos")
+
+    # Criar um widget Text com barras de rolagem
+    text_area = scrolledtext.ScrolledText(terms_window, wrap=tk.WORD)
+    text_area.pack(fill=tk.BOTH, expand=True)
+
+    # Inserir os termos formatados no widget Text
+    text_area.insert(tk.INSERT, formatted_terms)
 
 ##########################################################################################################################################################################
 
@@ -220,7 +259,7 @@ def main_gui():
 
     # Adicionando a textbox com largura ajustada
     global pergunta_entry
-    pergunta_entry = tk.Entry(frame, width=25, fg="gray")  # Definindo a cor inicial do texto para cinza
+    pergunta_entry = tk.Entry(frame, width=50, fg="gray")  # Definindo a cor inicial do texto para cinza
     pergunta_entry.insert(0, "insira sua pergunta aqui")  # Adicionando texto padrão
     pergunta_entry.bind("<FocusIn>", on_focus_in)  # Bind do evento de foco
     pergunta_entry.bind("<FocusOut>", on_focus_out)  # Bind do evento de perder foco
@@ -231,7 +270,7 @@ def main_gui():
     btn_perguntar_textbox.grid(row=0, column=1)  # Posicionado na primeira linha, segunda coluna
 
     # Adicionando o label para exibir a resposta
-    resposta_label = tk.Label(window, text="", wraplength=350, width=60, height=2, bd=1, relief="solid", fg="black")  # Wraplength para quebrar a linha se o texto for muito longo
+    resposta_label = tk.Label(window, text="", wraplength=350, width=57, height=2, bd=1, relief="solid", fg="black")  # Wraplength para quebrar a linha se o texto for muito longo
     resposta_label.pack(pady=10)
     resposta_label.config(fg="blue", bg="white")
 
