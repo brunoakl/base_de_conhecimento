@@ -15,6 +15,8 @@ mapeamento_palavras_chave = {
     "é reconhecido como": "é_um",
     "é conhecido como": "é_um",
     "é categorizado como": "é_um",
+    "é o": "é_um",
+    "é?": "é_um",
 
     #Come
     "come": "come",
