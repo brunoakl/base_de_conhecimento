@@ -1,6 +1,7 @@
 # Base de Conhecimento
 - Projeto para a disciplina de Inteligência Artiificial
 - Implementação de uma base de conhecimento utilizando uma rede semântica 
+- [Vídeo com o funcionamento](https://youtu.be/TUZhv-JGYxk)
 
 ## Autores e Distribuição de Tarefas:
 Bruno Machado Ferreira `Troubleshooting e Documentação do Projeto`
@@ -43,6 +44,10 @@ Ao fazer perguntas diretas, o programa responderá de acordo e iniciará um graf
 Para testes com mais precisão, confira os termos já configurados e os animais registrados clicando, respectivamente em "Ver as propriedades" e "Ver os animais". 
 
 O botão "Comparar dois animais" vai solicitar ao usuário dois animais dentro da rede semântica. Ao preencher os campos, o programa abrirá uma janela nova para mostrar os dados na base de conhecimento referente aos animais escolhidos.
+
+O botão "Visualizar rede semântica completa" faz o programa criar e abrir um arquivo que contém toda a ontologia registrada, com os grafos interligados em todas as combinações. 
+
+Atenção! A rede semântica completa é uma imagem MUITO grande. O zoom é limitado pelo hardware local.
 
 Os arquivos "animais.py" e "perguntas.py" são os componentes do backend, armazenando os dados da base de conhecimento e configurando a flexibilidade dos termos usados para fazer perguntas.
 
