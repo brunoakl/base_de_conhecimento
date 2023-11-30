@@ -27,7 +27,7 @@ Além disso, o repositório contará com a implementação de uma rede semântic
 
 ## Preparando o ambiente
 Agora, vamos criar o ambiente Conda e ativá-lo. Em um terminal aberto na pasta que contém o projeto, execute `conda create -n basecon python==3.10 -y && conda activate basecon`.
-Em seguida, instale graphviz usando `pip install graphviz==0.20.1`
+Em seguida, instale graphviz usando `pip install graphviz==0.20.1`. Em alguns casos, o sistema pode retornar um erro referente ao graphviz não estar no PATH. Para contornar isso, certifique-se de instalar a dependência diretamente no sistema usando `sudo apt-get install graphviz`. 
 Para verificar que tudo está instalado, execute `python` para ativar o prompt interativo do Python e em seguida, `import tkinter` e `import graphviz`. Se tudo estiver certo, nenhum erro será retornado.
 Feche o prompt interativo apertando Ctrl+Z e execute `python main.py` para começar!
 
